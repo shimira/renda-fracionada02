@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#059669" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Renda Frac." />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="format-detection" content="telephone=no" />
+  <title>Renda Fracionada</title>
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" type="image/svg+xml" href="./icons/icon.svg" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./icons/icon-180.png" />
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <div class="app-shell" id="appShell">
+    <aside class="side-rail" id="sideRail" aria-label="Navegação principal"></aside>
+
+    <div class="app-main-wrap">
+      <header class="top-bar" id="topBar">
+        <button class="icon-btn" id="btnPrevMonth" type="button" aria-label="Mês anterior">‹</button>
+        <button class="month-pill" id="btnResetMonth" type="button" title="Voltar para o mês atual">
+          <span class="month-title" id="lblMonthTitle">Mês Atual</span>
+          <span class="month-sub">Toque para mês atual</span>
+        </button>
+        <button class="icon-btn" id="btnNextMonth" type="button" aria-label="Próximo mês">›</button>
+        <button class="icon-btn" id="btnSettings" type="button" aria-label="Configurações">⚙</button>
+      </header>
+
+      <main class="main-content" id="mainContent"></main>
+    </div>
+
+    <nav class="bottom-nav" id="bottomNav" aria-label="Abas"></nav>
+  </div>
+
+  <div class="fab-scrim hidden" id="fabScrim"></div>
+  <div class="fab-container" id="fabContainer">
+    <div class="fab-menu hidden" id="fabMenu">
+      <button class="fab-mini is-extra" id="fabAddExtra" type="button">🛠 Nova Despesa Extra</button>
+      <button class="fab-mini is-expense" id="fabAddExpense" type="button">↑ Novo Gasto</button>
+      <button class="fab-mini is-income" id="fabAddIncome" type="button">↓ Nova Entrada Fracionada</button>
+    </div>
+    <button class="fab-main" id="fabMain" type="button" aria-label="Ações rápidas">+</button>
+  </div>
+
+  <div class="modal-backdrop hidden" id="modalBackdrop" role="dialog" aria-modal="true">
+    <div class="modal-sheet" id="modalSheet"></div>
+    <div class="modal-sheet hidden" id="subModalSheet"></div>
+  </div>
+
+  <div class="toast hidden" id="toastHost" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>
